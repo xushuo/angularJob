@@ -1,20 +1,17 @@
+var rootApp=angular.module('rootApp',['ui.router','ngGrid']);
 /**
- * Created by hadoop on 2016/5/11.
+ *  ui-router配置路由
  */
-var myApp=angular.module('myApp',['ui.router','hellomodel']);
-myApp.config(function($stateProvider,$urlRouterProvider){
+ rootApp.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise('/index');
-    $stateProvider
-        .state('index',{
-            url:"/index",
-            templateUrl:'templates/hello.html'
-        })
-        .state('index.hello2',{
-            url:'/hello2',
-            templateUrl:'templates/hello2.html'
-        })
-        .state('index.hello3',{
-            url:'/hello3',
-            templateUrl:'templates/hello3.html'
-        })
-});
+     $stateProvider
+         .state('/index',{
+             url:'/index',
+             views:{
+                 '':{
+                     templateUrl:'templates/home.html'
+                 },
+
+             }
+         });
+ })
