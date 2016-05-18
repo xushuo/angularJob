@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal" role="form" ng-controller="usercontrl" name="loginForm" novalidate>
+            <div class="form-group">
+                <label class="col-md-2">用户名</label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="user.name" name="name" class="form-control" placeholder="请输入6位用户名" required/>
+                    <div style="color: red;" ng-show="loginForm.name.$dirty&&loginForm.name.$invalid">
+                        <span ng-show="loginForm.name.$error.required">用户名是必须的</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2">邮箱</label>
+                <div class="col-md-10">
+                    <input type="email" name="email" ng-model="user.email" placeholder="邮箱" class="form-control" required>
+                    <div style="color: red;" ng-show="loginForm.email.$dirty&&loginForm.email.$invalid">
+                        <span ng-show="loginForm.email.$error.required">邮箱是必须的</span>
+                        <span ng-show="loginForm.email.$error.email">非法的邮箱地址</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2">密码</label>
+                <div class="col-md-10">
+                    <input type="password" ng-model="user.password"  ng-pattern="/\d/" ng-minlength="6" ng-maxlength="8" name="password" placeholder="请输入6位密码" class="form-contrl" required/>
+                    <div style="color: red;" ng-show="loginForm.password.$dirty&&loginForm.password.$invalid">
+                        <span ng-show="loginForm.password.$error.minlength">密码最小输入长度为6</span>
+                        <span ng-show="loginForm.password.$error.maxlength">密码最大输入长度为8</span>
+                        <span ng-show="loginForm.password.$error.pattern">只能输入数字</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        <label for="">
+                            <input type="checkbox" ng-model="user.autoLogin" />自动登录
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-default" ng-click="reset()" ng-disabled="isUnchanged(user)">重置</button>
+                    <button class="btn btn-primary" ng-disabled="loginForm.$invalid||isUnchanged(user)" ng-click="login(user)">登录</button>
+                    <div style="color: red;" ng-show="login.flag">
+                        <span>{{login.msg}}</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
