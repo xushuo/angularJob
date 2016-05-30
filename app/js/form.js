@@ -16,13 +16,13 @@ hellomodel.controller('formcontrl',['$scope',function($scope){
             email:'pppp@qq.com',
             password:'tttt',
             autoLogin:false
-        }
+        };
     };
     $scope.resetFormData=function(){
         $scope.userInfo={
             email:'',
             password:'',
             autoLogin:false
-        }
-    }
+        };
+    };
 }]);

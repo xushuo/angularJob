@@ -118,6 +118,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['csslint', 'jshint', 'imagemin',  'concat', 'cssmin','uglify']);
     grunt.registerTask('css', ['concat:css', 'cssmin']);
     grunt.registerTask('dev', ['csslint', 'jshint']);
+    grunt.registerTask('simple', ['imagemin', 'concat', 'cssmin','uglify']);
     grunt.registerTask('dest', ['imagemin', 'concat:css', 'cssmin', 'uglify:minjs']);
 
 };

@@ -4,10 +4,10 @@ usercontrl.controller('usercontrl',function($scope,$http,$state){
     $scope.login={flag:false,msg:'error'};
     $scope.isUnchanged=function(user){
         return angular.equals(user,$scope.master);
-    }
+    };
     $scope.reset=function(){
         $scope.user=angular.copy($scope.master);
-    }
+    };
     $scope.reset();
     $scope.login=function(user){
         $scope.master=angular.copy($scope.user);
@@ -25,7 +25,7 @@ usercontrl.controller('usercontrl',function($scope,$http,$state){
             $scope.login.flag=true;
             $scope.login.msg="验证失败";
         });
-    }
+    };
 });
 
 /**

@@ -51,5 +51,5 @@ rootApp.run(function($rootScope,$state,$stateParams){
         .state('bookDetail',{
             url:'/bookDetail/:bookId',
             templateUrl:'templates/bookDetail.html'
-        })
+        });
  })
