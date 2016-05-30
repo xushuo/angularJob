@@ -39,7 +39,7 @@ rootApp.run(function($rootScope,$state,$stateParams){
                 'bookType@bookList':{
                     templateUrl:'templates/bookType.html'
                 },
-                'bookGrid@bookGrid':{
+                'bookGrid@bookList':{
                     templateUrl:'templates/bookGrid.html'
                 }
             }
@@ -50,8 +50,6 @@ rootApp.run(function($rootScope,$state,$stateParams){
         })
         .state('bookDetail',{
             url:'/bookDetail/:bookId',
-            views:{
-                templateUrl:'templates/bookDetail.html'
-            }
+            templateUrl:'templates/bookDetail.html'
         })
  })
